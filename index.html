@@ -14,14 +14,14 @@
 	</head>
 
 	<body>
-		<nav class="nav js-nav is-shown">
+		<nav class="nav js-nav is-shown" style="flex:1.5">
 			<header class="nav-header">
 				<h1 class="nav-title">XML <strong>Converter</strong></h1>
 			</header>
 			<div class="container nav-item"></div>
 		</nav>
 
-		<main class="content.is-shown js-content" style="flex: 1.5">
+		<main class="content.is-shown js-content" style="flex: 4">
 			<div class="section-wrapper" style="height: 50%">
 				<header class="section-header">
 					<h1>XML <strong>Converter</strong></h1>
@@ -81,20 +81,53 @@
 					<div class="component">
 						<div class="label">Name</div>
 						<textarea></textarea>
-						<button>X</button>
+						<div class="styled-select slate" style="margin: 0; margin-right: 12px;">
+							<select>
+								<option value="">Type</option>
+								<option value="uint8">uint8</option>
+								<option value="uint16">uint16</option>
+								<option value="Array">Array</option>
+								<option value="String">String</option>
+							</select>
+						</div>
+						<button>+</button>
 					</div>
 				</div>
-			</div>
 			</div>
 
 			<div class="section-wrapper" style="height: 50%">
 				<header class="section-header">
 					<h1>Source <strong>File View</strong></h1>
 				</header>
+				<div class="function">
+					<div class="label" style="display: block;">Offset : 0x00000 - 0x0002f</div>
+					<div class="component">
+						<div class="label">Name</div>
+						<textarea></textarea>
+						<div class="styled-select slate" style="margin: 0; margin-right: 12px;">
+							<select>
+								<option value="">Type</option>
+								<option value="uint8">uint8</option>
+								<option value="uint16">uint16</option>
+								<option value="Array">Array</option>
+								<option value="String">String</option>
+							</select>
+						</div>
+						<button>Save</button>
+					</div>
+				</div>
+
+				<div class="function">
+					<div class="component">
+						<pre class="address"></pre>
+						<pre class="hex-code"></pre>
+						<pre class="string"></pre>
+					</div>
+				</div>
 			</div>
 		</main>
 
-		<main class="content.is-shown js-content" style="flex: 1; border-left: 1px solid #ddd">
+		<main class="content.is-shown js-content" style="flex: 3; border-left: 1px solid #ddd">
 			<div class="section-wrapper" style="height: 50%">
 				<header class="section-header">
 					<h1>XML Converter View</h1>

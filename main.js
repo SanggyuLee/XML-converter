@@ -14,7 +14,7 @@ function initialize() {
 
 	function createWindow() {
 		var windowOptions = {
-			width: 1080,
+			width: 1280,
 			minWidth: 680,
 			height: 840
 		}
@@ -28,9 +28,10 @@ function initialize() {
 		
 		if(debug) {
 			mainWindow.webContents.openDevTools()
-			mainWindow.maximize()
 			require('devtron').install()
 		}
+
+		mainWindow.maximize()
 
 		mainWindow.on('closed', function () {
 			mainWindow = null

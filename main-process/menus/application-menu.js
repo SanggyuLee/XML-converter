@@ -1,4 +1,5 @@
 const electron = require('electron')
+const fs = require('fs')
 const browserWindow = electron.BrowserWindow
 const dialog = electron.dialog
 const ipc = electron.ipcMain
@@ -22,7 +23,23 @@ let template = [
 					dialog.showOpenDialog({
 						properties: ['openFile']
 					}, function (files) {
-						focusedWindow.webContents.send('selected-file', {msg: files})
+						files.forEach(function(filename) {
+							fs.readFile(filename, function(err, data) {
+								if(err)
+									throw err
+
+								var hexdump = require('hexdump-nodejs')
+								var stats = fs.statSync(filename)
+								var fileSize = stats["size"]
+								var buffer = new Buffer(fileSize)
+								 
+								buffer.write(data.toString(), 0x10)
+								
+								var result = hexdump(buffer)
+
+								focusedWindow.webContents.send('file-read', {offset: result["offset"], string: result["string"], hex: result["row"]})
+							})
+						})
 					})
 				}
 			},

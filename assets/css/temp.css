@@ -23,8 +23,8 @@
 
 .function textarea {
 	resize: none;
-	margin-right: 30px;
-	width: 70%;
+	margin-right: 15px;
+	width: 75%;
 }
 
 .function .component {
@@ -35,9 +35,24 @@
 	display: flex;
 }
 
+.function .component .address {
+	color: green;
+	flex: 1.2;
+}
+
+.function .component .hex-code {
+	color: blue;
+	flex: 7;
+}
+
+.function .component .string {
+	flex: 2;
+}
+
 .component button {
 	border: none;
-	background-color: transparent;
+	background-color: #c8c8c8;
+	border-radius: 4px;
 }
 
 /** styled dropdown menu for function **/
