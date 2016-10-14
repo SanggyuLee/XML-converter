@@ -42,10 +42,9 @@
   right: 1.75rem; /* magic */
 }
 
-
-
 .nav-item {
   padding: .5em 0;
+  margin-left: 20px;
 }
 
 .nav-icon {
